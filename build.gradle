@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+jar {
+    baseName = 'myspringdata'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.springframework:spring-context:4.1.2.RELEASE'
+    compile 'org.springframework.data:spring-data-redis:1.4.1.RELEASE'
+    compile 'redis.clients:jedis:2.6.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
+
